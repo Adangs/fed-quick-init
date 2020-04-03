@@ -1,0 +1,75 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="g-page">
+    <tabs onChange="onTabsChange">
+      <tab-content scrollable="{{scrollable}}">
+        <x-home></x-home>
+        <x-hero></x-hero>
+        <x-news></x-news>
+      </tab-content>
+      <tab-bar class="m-tab-bar">
+        <div class="item">
+          <block if="{{index === 0}}">
+            <image src="../../images/tab-bar-1-active.png" />
+          </block>
+          <block else>
+            <image src="../../images/tab-bar-1.png" />
+          </block>
+          <text>精选</text>
+        </div>
+        <div class="item">
+          <block if="{{index === 1}}">
+            <image src="../../images/tab-bar-2-active.png" />
+          </block>
+          <block else>
+            <image src="../../images/tab-bar-2.png" />
+          </block>
+          <text>英雄</text>
+        </div>
+        <div class="item">
+          <block if="{{index === 2}}">
+            <image src="../../images/tab-bar-4-active.png" />
+          </block>
+          <block else>
+            <image src="../../images/tab-bar-4.png" />
+          </block>
+          <text>资讯</text>
+        </div>
+      </tab-bar>
+    </tabs>
+  </div>
+</template>
+
+<import name="x-home" src="./components/x-home"></import>
+<import name="x-hero" src="./components/x-hero"></import>
+<import name="x-news" src="./components/x-news"></import>
+<script>
+  export default {
+    // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+    private: {
+      index: 0,
+      scrollable: false
+    },
+    onTabsChange({index}) {
+      this.index = index
+    }
+  }
+</script>
+
+<style lang="less">
+  @import '../../app.less';
+  .g-page{
+    background: red;
+  }
+  .m-tab-bar{
+    border-top: 1px solid #dcdcdc;
+    .item{
+      flex-direction: column;
+      image{ width: 60px; height: 60px; margin: 0 auto;}
+    }
+    text{
+      font-size: 24px; color: #999999; text-align: center;
+      &:active{ color: #0867FF;}
+    }
+  }
+</style>

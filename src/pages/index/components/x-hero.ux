@@ -1,0 +1,26 @@
+<template>
+  <div class="g-page">
+    <text>x-hero</text>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'XHero',
+    components: {},
+    props: {},
+    data() {
+      return {};
+    },
+    computed: {},
+    watch: {},
+    onInit() {
+      console.log(2)
+    },
+    methods: {}
+  };
+</script>
+
+<style lang="less">
+  @import '../../../app.less';
+</style>

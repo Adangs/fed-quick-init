@@ -1,0 +1,26 @@
+<template>
+  <div class="g-page">
+    <text>x-news</text>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'XNews',
+    components: {},
+    props: {},
+    data() {
+      return {};
+    },
+    computed: {},
+    watch: {},
+    onInit() {
+      console.log(3)
+    },
+    methods: {}
+  };
+</script>
+
+<style lang="less">
+  @import '../../../app.less';
+</style>
