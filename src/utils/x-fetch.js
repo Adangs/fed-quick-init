@@ -12,11 +12,6 @@ export default (options = {}) => {
     data: Object.assign({
       version: config.version,
       channel: 'quickapp',
-      apk_id: 37,
-      channel_id: '90028a',
-      app_id: 'h9039j',
-      game_id: 266,
-      vcode: '13.00.4.0'
     }, options.data),
     header: {
       'Content-Type': 'application/x-www-form-urlencoded',
